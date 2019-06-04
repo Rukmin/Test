@@ -1,0 +1,50 @@
+﻿@model Register
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta name="viewport" content="width=device-width" />  
+    <title>Insert</title>  
+    <script>
+        function AvoidSpace(event) {
+            var k = event ? event.which : window.event.keyCode;
+            if (k == 32) return false;
+        }
+
+        function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else { return true; }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+    </script>
+</head>  
+<body>  
+    <form id="frmDetail" method="post" action="@Url.Action("RegisterUser")">
+        First Name:<input name="Firstname" id="Firstname" />
+        <br />
+        Lastname:<input name="Lastname" id="Lastname" />
+        <br />
+       Mothername:<input name="Mothername" id="Mothername" />
+        <br />
+        <input class="form-control alphaonly" data-val="true" data-val-regex="Use Alphabates only please" data-val-regex-pattern="^[a-zA-Z]+$" 
+               data-val-required=" Father Name Is Required" id="Fathername" maxlength="50" name="Fathername" type="text" value="" onkeypress="return onlyAlphabets(event,this);">
+        <span class="field-validation-valid errormsg" data-valmsg-for="fathername" data-valmsg-replace="true"></span>
+        <span id="Fathernameerror" class="errormsg"></span>
+
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>  
+</body>  
+</html> 
