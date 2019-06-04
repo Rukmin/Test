@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+ $(document).ready(function(){
+            $("#10thmarks").change(function() {
+                var percentage = Math.round((($("#10thmarks").val() / 500) * 100));
+                $("#10thper").val(percentage);
+            });
+            $("#12thmarks").change(function() {
+                var percentage = Math.round((($("#12thmarks").val() / 1200) * 100));
+                $("#12thper").val(percentage);
+            });
+        });
+        function calculate1othpercentage() {
+            $("#10thmarks").change(function() {
+                var percentage = Math.round((($("#10thmarks").val() / 500) * 100));
+                $("#10thper").val(percentage);
+            });
+        }
+        function calculate1othpercentage() {
+            $("#12thmarks").change(function () {
+                var percentage = Math.round((($("#12thmarks").val() / 1200) * 100));
+                $("#12thper").val(percentage);
+            });
+        }
+    </script>
+</script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>
+                10th marks    <span class="redtxt">*</span>
+                <input type="number" id="10thmarks" name="10th marks" min="10" max="500" data-val="true" data-val-required=" 10th marks Is Required" onkeypress="calculate10thpercentage()" />
+                <span class="field-validation-valid errormsg" data-valmsg-for="10th marks " data-valmsg-replace="true"></span>
+                <span id="10th marks error" class="errormsg"></span>
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <p>
+                12th marks <span class="redtxt">*</span>
+
+                <input type="number" id="12thmarks" name="10th marks" min="10" max="1200" data-value="true" data-val-required=" 12th marks Is Required" onkeypress="calculate12thpercentage()"/>
+                <span class="field-validation-valid errormsg" data-valmsg-for=" 12th marks" data-valmsg-replace="true"></span>
+                <span id="12th markserror" class="errormsg"></span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>
+                10th percentage   <span class="redtxt">*</span>
+
+
+                <input type="number" id="10thper" name="10th percentage" data-val="true" data-val-required=" 10th percentage Is Required" disabled />
+                <span class="field-validation-valid errormsg" data-valmsg-for=" 10th per" data-valmsg-replace="true"></span>
+                <span id="10th pererror" class="errormsg"></span>
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <p>
+                12th percentage  <span class="redtxt">*</span>
+                <input type="number" id="12thper" name="12th percentage" data-val="true" data-val-required=" 12th percentage Is Required" disabled />
+                <span class="field-validation-valid errormsg" data-valmsg-for=" 12th per" data-valmsg-replace="true"></span>
+                <span id="12th pererror" class="errormsg"></span>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
